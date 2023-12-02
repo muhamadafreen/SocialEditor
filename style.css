@@ -13,14 +13,25 @@ button {
 }
 
 /* Keyframes*/
-@keyframes fade-in-from-top{
-  0%{
-opacity: 0;
-transform:translateY(-50px)
+@keyframes fade-in-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
   }
-  100%{
-opacity: 1;
-transform: translateY(0px);
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 /*Base Styles*/
@@ -30,6 +41,11 @@ transform: translateY(0px);
   color: #fff;
   height: 100vh;
   width: 100vw;
+}
+
+.app__container {
+  height: calc(100vh - 55px);
+  display: flex;
 }
 
 /* Header styling */
@@ -52,7 +68,7 @@ transform: translateY(0px);
   padding: 0 13px;
   cursor: pointer;
   transition: all 0.4s;
-   animation: fade-in-from-top 0.5s;
+  animation: fade-in-from-top 0.5s;
 }
 
 .dd-toggle:hover {
@@ -83,4 +99,89 @@ transform: translateY(0px);
 }
 
 .dd-toggle__text {
+}
+
+/*-------------sidebar-------------------------------*/
+
+.sidebar {
+  background-color: #10171a;
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+}
+.menu {
+}
+.menu__button {
+  padding: 19px 0;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transition: all 0.5s;
+  animation: fade-in-from-left 0.5s;
+}
+
+.menu__button:hover {
+  background-color: #2b363b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu__button:focus {
+  background-color: #2b363b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu__button--active {
+  background-color: #2b363b;
+  color: #fff;
+  position: relative;
+}
+
+.menu__button--active::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background-color: #375bb6;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu__icon {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.menu__text {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.footer {
+margin-top: auto;
+margin-bottom: 60px;
+transform: rotate(-90deg);
+
+}
+
+.copyright {
+   color: rgba(255, 255, 255, 0.15);
+   font-size: 12px;
+   white-space: nowrap;
+
+}
+
+/*----------------panel----------------------------*/
+.panel {
+  background-color: #2b363c;
+  width: 350px;
+}
+
+/*-----------------main block---------------------------*/
+.main {
+  background-color: #edf1f3;
+  flex: 1;
 }
